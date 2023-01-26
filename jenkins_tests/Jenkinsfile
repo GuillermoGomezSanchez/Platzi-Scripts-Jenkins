@@ -20,7 +20,10 @@ pipeline {
       }
     }
     stage('Run Remote'){
-     build wait: false, job: 'Parametirized', parameters: [text(name: 'ROOT_ID', value: '$BUILD_ID')] 
+      steps{
+      build wait: false, job: 'Parametirized', parameters: [text(name: 'ROOT_ID', value: '$BUILD_ID')] 
+      } 
     }
+    
   }
 }
